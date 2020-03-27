@@ -20,8 +20,12 @@ const remove = wildcard=>{
     });
 }
 const log = function (error, stdout, stderr) {
-    console.log(stdout);
-    console.error(stderr);
+    if (stdout){
+        console.log(stdout);
+    }
+    if (stderr){
+        console.error(stderr);
+    }
 }
 
 remove(`${SYSTEMD_PATH}/autotunnel-*.service`);
@@ -40,7 +44,7 @@ CONFIG.tunnels.forEach(tunnel=>{
 });
 
 setTimeout(()=>{
-    console.log('Reloading daemon');
+    console.log('Reloading SYSTEMD DAEMON');
     exec('systemctl daemon-reload', log);
 }, 1000);
 
