@@ -6,7 +6,7 @@ Auto SSH Tunneling with systemd
 * nodejs
 
 # Usage
-* Rename ```config.js.sample``` to ```config.js```
+* Rename ```config.sample.js``` to ```config.js```
 * Edit what you need
 * Run ```sudo ./main.js```
 
